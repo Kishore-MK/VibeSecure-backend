@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  backend:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_ENV=development
+      - GITHUB_CLIENT_ID=Ov23liDGBvsiHE0zDQTY
+      - GITHUB_CLIENT_SECRET=a1eac4f993ffe5cc487ebce9c2d54e6f3d1c2794
+      - GITHUB_CALLBACK=http://localhost:5000/auth/callback
+    depends_on:
+      - db
+
+  db:
+    image: nouchka/sqlite3
+    volumes:
+      - sqlite_data:/data
+
+volumes:
+  sqlite_data:

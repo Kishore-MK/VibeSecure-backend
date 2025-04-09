@@ -1,0 +1,5 @@
+.env
+venv
+templates
+__pycache__
+results

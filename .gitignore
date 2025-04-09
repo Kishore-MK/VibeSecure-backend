@@ -1,0 +1,7 @@
+venv
+.env
+
+results
+testdb.py
+__pycache__
+templates
