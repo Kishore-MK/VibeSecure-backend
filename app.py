@@ -12,7 +12,7 @@ migrate = Migrate()
 
 def create_app():
     app = Flask(__name__)
-    CORS(app, supports_credentials=True, origins=["http://localhost:5173"])    
+    CORS(app, supports_credentials=True, origins=["https://vibe-secure.vercel.app/"])    
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.secret_key = os.environ.get("SECRET_KEY")
@@ -37,5 +37,5 @@ def create_tables(app):
 if __name__ == "__main__":
     app = create_app()
     create_tables(app)
-    app.run(debug=True)
+    app.run(debug=false)
     
