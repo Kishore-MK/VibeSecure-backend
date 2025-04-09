@@ -57,7 +57,7 @@ def github_callback():
     }
 
     # Redirect to frontend with user info (encoded in query string)
-    Redirect_url = f"http://localhost:5173/auth/success"
+    Redirect_url = f"https://vibe-secure.vercel.app/auth/success"
     return redirect(Redirect_url)
 
 @bp.route("/auth/user")
